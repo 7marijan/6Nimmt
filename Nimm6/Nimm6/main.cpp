@@ -6,6 +6,7 @@
 //
 
 #include <iostream>
+#include "gamelib.hpp"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
