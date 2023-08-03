@@ -13,11 +13,8 @@ class RandomBot:public Player
 public:
     RandomBot();
     ~RandomBot();
-    int findCheapestRow() override;
-    void pickCard() override;
+    int pickCard(std::vector<GameCard> cards) override;
+    int findCheapestRow(std::shared_ptr<Playground> Field) override;
     int pickRow() override;
-    void takeHand() override;
-    std::vector<GameCard> showOwnCards() override;
-    
     
 };

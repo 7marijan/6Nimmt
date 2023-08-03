@@ -8,6 +8,7 @@
 #include "Player.hpp"
 #include "UI.hpp"
 #include "Dealer.h"
+#include "Playground.hpp"
 
 Player::Player()
 {
@@ -17,10 +18,9 @@ Player::~Player()
 {
 }
 
-void Player::pickCard()
+int Player::pickCard(std::vector<GameCard> cards)
 {
-    UI UI;
-    UI.getPlayerMove(mCards);
+    return 1;
 }
 
 void Player::addCost(int cost)
@@ -30,26 +30,19 @@ void Player::addCost(int cost)
 
 int Player::pickRow()
 {
-    UI UI;
-    int row;
-    
-    UI.giveOutput("Die Ausgewählte Karte passt leider zu keiner Reihe.");
-    UI.giveCostOfRow();
-    row = UI.getPlayerRow();
-    
-    return row;
+    return 0;
 }
 
-void Player::takeHand()
+int Player::showPoints()
 {
-    Dealer Dealer;
-    
-    mCards = Dealer.Draw(10);
+    return mPoints;
 }
 
-std::vector<GameCard> Player::showOwnCards()
+int Player::findCheapestRow(std::shared_ptr<Playground> Field)
 {
-    return mCards;
+    return 0;
 }
+
+
 
 

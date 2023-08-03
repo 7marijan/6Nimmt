@@ -8,14 +8,14 @@
 #pragma once
 #include "Player.hpp"
 
+
 class Human:public Player
 {
 public:
     Human();
     ~Human();
-    int findCheapestRow() override;
-    void pickCard() override;
+    std::vector<GameCard> mCards;
+    int findCheapestRow(std::shared_ptr<Playground> Field) override;
+    int pickCard(std::vector<GameCard> cards) override;
     int pickRow() override;
-    void takeHand() override;
-    std::vector<GameCard> showOwnCards() override;
 };

@@ -7,16 +7,14 @@
 
 #pragma once
 #include "Player.hpp"
+#include "Playground.hpp"
 
 class LowestCardBot:public Player
 {
 public:
     LowestCardBot();
     ~LowestCardBot();
-    int findCheapestRow() override;
-    void pickCard() override;
+    int pickCard(std::vector<GameCard> cards) override;
     int pickRow() override;
-    void takeHand() override;
-    std::vector<GameCard> showOwnCards() override;
-
+    int findCheapestRow(std::shared_ptr<Playground> Field) override;
 };

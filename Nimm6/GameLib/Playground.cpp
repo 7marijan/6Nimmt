@@ -130,11 +130,11 @@ int Playground::clearRow(int row)
 
 int Playground::costOfRow(int row)
 {
-    int cost = 0;
+    int cost = 0, temp;
     
     for(int i = 0; i < 6; i ++)
-    {
-        cost += mField[row][i].cost;
+    {   temp = (int)mField[row][i].cost;
+        cost += temp;
     }
     
     return cost;

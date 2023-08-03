@@ -21,8 +21,9 @@ public:
     int getRightColumn(int value, int row);
     int costOfRow(int row);
     void initField(std::vector<GameCard> startCards);
+    int clearRow(int row);
 
 private:
     std::vector<GameCard> mField[4];
-    int clearRow(int row);
+    
 };

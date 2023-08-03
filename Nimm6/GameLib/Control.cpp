@@ -5,13 +5,17 @@
 //  Created by Marijan Buffi on 31.07.23.
 //
 
+#include <iostream>
+#include <memory>
 #include "Control.hpp"
 #include "Human.hpp"
 #include "LowestCardBot.hpp"
 #include "HighestCardBot.hpp"
 #include "RandomBot.hpp"
 #include "UI.hpp"
-#include <memory>
+#include <chrono>
+#include <thread>
+
 #include "Dealer.h"
 //UI UI;
 
@@ -43,44 +47,61 @@ void Control::preGame()
     std::shared_ptr<Player> P2 = choosePlayer("2");
     std::shared_ptr<Playground> Field (new Playground);
     
+    P1->mCards = Dealer.Draw(10);
+    P2->mCards = Dealer.Draw(10);
     playingCards = Dealer.Draw(4);
+    
+    
     Field->initField(playingCards);
     
     startGame(P1, P2, Field);
 }
 
+
+
+
+
 int Control::startGame(std::shared_ptr<Player> P1, std::shared_ptr<Player> P2, std::shared_ptr<Playground> Field)
 {
     
     UI UI;
-    int card1, card2 = 0, row1, row2 = 0;
+    int card1, card2, column1, column2, row1, row2;
     
-    while(true)
+    for(int i = 0; i < 10; i ++)
     {
+        Field->printField();
         
-        card2 = 1;
-        row2 = 1;
+        card1 = P1->pickCard(P1->mCards);
+        card2 = P2->pickCard(P2->mCards);
         
-        card1 = UI.getPlayerMove(P1->showOwnCards());
-
-        row1 = Field->getRightRow(P1->mCards[card1].value);
-        if(row1 != -1)
+        if(P1->mCards[card1] < P2->mCards[card2])
         {
-            Field->placeCard(P1->mCards, row1, Field->getRightColumn(P1->mCards[card1].value, row1), card1);
+            makeMove(Field, P1, card1, column1, row1);
+            systemSleep();
+            
+            Field->printField();
+            
+            systemSleep();
+            makeMove(Field, P2, card2, column2, row2);
         }
         else
         {
-            UI.giveOutput("TEST BESTANDEN");
+            makeMove(Field, P2, card2, column2, row2);
+            systemSleep();
+            
+            Field->printField();
+            
+            systemSleep();
+            makeMove(Field, P1, card1, column1, row1);
         }
         Field->printField();
-    
-        P1->mCards.erase(P1->mCards.begin()+card1);
     }
     
+    std::cout << "Player 1: " << P1->showPoints() << std::endl;
+    std::cout << "Player 2: " << P2->showPoints() << std::endl;
     
     return 3;
 }
-
 
 std::shared_ptr<Player> Control::choosePlayer(std::string number)
 {
@@ -122,4 +143,40 @@ std::shared_ptr<Player> Control::choosePlayer(std::string number)
     
 }
 
+void Control::clearFieldAddCost(const std::shared_ptr<Playground> &Field, const std::shared_ptr<Player> &P, int card, int column, int row)
+{
+    P->addCost(Field->costOfRow(row));
+    Field->clearRow(row);
+    Field->placeCard(P->mCards, row, column, card);
+}
 
+void Control::makeMove(const std::shared_ptr<Playground> &Field, const std::shared_ptr<Player> &P, int card, int &column, int &row)
+{
+    row = Field->getRightRow(P->mCards[card].value);
+    
+    if(row == -1)
+    {
+        row = P->findCheapestRow(Field);
+        clearFieldAddCost(Field, P, card, 0, row);
+    }
+    else
+    {
+        column = Field->getRightColumn(P->mCards[card].value, row);
+        
+        if(column == 5)
+        {
+            clearFieldAddCost(Field, P, card, 0, row);
+        }
+        else
+        {
+            Field->placeCard(P->mCards, row, column, card);
+        }
+    }
+    
+    P->mCards.erase(P->mCards.begin()+card);
+}
+
+void Control::systemSleep()
+{
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+}

@@ -7,6 +7,7 @@
 
 #pragma once
 #include "GameCard.h"
+#include "Playground.hpp"
 #include <vector>
 
 class Player
@@ -15,14 +16,13 @@ public:
     Player();
     ~Player();
     std::vector<GameCard> mCards;
-    virtual int findCheapestRow();
-    virtual void pickCard();
+    void addCost(int cost);
+    virtual int findCheapestRow(std::shared_ptr<Playground> Field);
+    virtual int pickCard(std::vector<GameCard> cards);
     virtual int pickRow();
-    virtual void takeHand();
-    virtual std::vector<GameCard> showOwnCards();
+    virtual int showPoints();
 
 private:
-    
     int mPoints;
-    void addCost(int cost);
+    
 };
