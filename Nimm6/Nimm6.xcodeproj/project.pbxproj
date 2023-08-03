@@ -7,16 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		33BB3F792A557ABC0064E0E6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33BB3F782A557ABC0064E0E6 /* main.cpp */; };
+		3363F6C52A779BDE005771C9 /* framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 3363F6BC2A779BDE005771C9 /* framework.h */; };
+		3363F6C62A779BDE005771C9 /* Dealer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3363F6BD2A779BDE005771C9 /* Dealer.cpp */; };
+		3363F6C72A779BDE005771C9 /* Dealer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3363F6BE2A779BDE005771C9 /* Dealer.h */; };
+		3363F6C82A779BDE005771C9 /* GameCardCreator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3363F6BF2A779BDE005771C9 /* GameCardCreator.h */; };
+		3363F6C92A779BDE005771C9 /* GameCard.h in Headers */ = {isa = PBXBuildFile; fileRef = 3363F6C02A779BDE005771C9 /* GameCard.h */; };
+		3363F6CA2A779BDE005771C9 /* GameCardCreator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3363F6C12A779BDE005771C9 /* GameCardCreator.cpp */; };
+		3363F6CB2A779BDE005771C9 /* GameCard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3363F6C22A779BDE005771C9 /* GameCard.cpp */; };
+		3363F6CC2A779BDE005771C9 /* pch.h in Headers */ = {isa = PBXBuildFile; fileRef = 3363F6C32A779BDE005771C9 /* pch.h */; };
+		3363F6CD2A779BDE005771C9 /* pch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3363F6C42A779BDE005771C9 /* pch.cpp */; };
+		3363F6D62A77B20C005771C9 /* Playground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3363F6D42A77B20C005771C9 /* Playground.cpp */; };
+		3363F6D72A77B20C005771C9 /* Playground.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3363F6D52A77B20C005771C9 /* Playground.hpp */; };
+		3363F6DA2A77B2C3005771C9 /* UI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3363F6D82A77B2C3005771C9 /* UI.cpp */; };
+		3363F6DB2A77B2C3005771C9 /* UI.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3363F6D92A77B2C3005771C9 /* UI.hpp */; };
+		3363F6DE2A77B3AE005771C9 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3363F6DC2A77B3AE005771C9 /* Player.cpp */; };
+		3363F6DF2A77B3AE005771C9 /* Player.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3363F6DD2A77B3AE005771C9 /* Player.hpp */; };
+		3363F6E22A77B430005771C9 /* Control.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3363F6E02A77B430005771C9 /* Control.cpp */; };
+		3363F6E32A77B430005771C9 /* Control.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3363F6E12A77B430005771C9 /* Control.hpp */; };
+		3363F6E62A77B5BC005771C9 /* Human.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3363F6E42A77B5BC005771C9 /* Human.cpp */; };
+		3363F6E72A77B5BC005771C9 /* Human.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3363F6E52A77B5BC005771C9 /* Human.hpp */; };
+		3363F6EA2A77BA09005771C9 /* LowestCardBot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3363F6E82A77BA09005771C9 /* LowestCardBot.cpp */; };
+		3363F6EB2A77BA09005771C9 /* LowestCardBot.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3363F6E92A77BA09005771C9 /* LowestCardBot.hpp */; };
+		3363F6EE2A77BA68005771C9 /* HighestCardBot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3363F6EC2A77BA68005771C9 /* HighestCardBot.cpp */; };
+		3363F6EF2A77BA68005771C9 /* HighestCardBot.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3363F6ED2A77BA68005771C9 /* HighestCardBot.hpp */; };
+		3363F6F22A77BB47005771C9 /* RandomBot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3363F6F02A77BB47005771C9 /* RandomBot.cpp */; };
+		3363F6F32A77BB47005771C9 /* RandomBot.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3363F6F12A77BB47005771C9 /* RandomBot.hpp */; };
+		3363F6F82A77D2EA005771C9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3363F6F72A77D2EA005771C9 /* main.cpp */; };
 		33BB3F952A557B520064E0E6 /* gamelib.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 33BB3F942A557B520064E0E6 /* gamelib.hpp */; };
 		33BB3F972A557B520064E0E6 /* gamelibPriv.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 33BB3F962A557B520064E0E6 /* gamelibPriv.hpp */; };
 		33BB3F992A557B520064E0E6 /* gamelib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33BB3F982A557B520064E0E6 /* gamelib.cpp */; };
 		33BB3FA42A557B690064E0E6 /* Tests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 33BB3FA32A557B690064E0E6 /* Tests.mm */; };
 		33BB3FA52A557B690064E0E6 /* libgamelib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33BB3F922A557B520064E0E6 /* libgamelib.a */; };
+		33E620132A7A972E00C329B3 /* libgamelib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33BB3F922A557B520064E0E6 /* libgamelib.a */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		33BB3FA62A557B690064E0E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33BB3F6D2A557ABC0064E0E6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33BB3F912A557B520064E0E6;
+			remoteInfo = gamelib;
+		};
+		33E620112A7A971800C329B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 33BB3F6D2A557ABC0064E0E6 /* Project object */;
 			proxyType = 1;
@@ -38,8 +71,33 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3363F6BC2A779BDE005771C9 /* framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = framework.h; sourceTree = "<group>"; };
+		3363F6BD2A779BDE005771C9 /* Dealer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dealer.cpp; sourceTree = "<group>"; };
+		3363F6BE2A779BDE005771C9 /* Dealer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dealer.h; sourceTree = "<group>"; };
+		3363F6BF2A779BDE005771C9 /* GameCardCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCardCreator.h; sourceTree = "<group>"; };
+		3363F6C02A779BDE005771C9 /* GameCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCard.h; sourceTree = "<group>"; };
+		3363F6C12A779BDE005771C9 /* GameCardCreator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameCardCreator.cpp; sourceTree = "<group>"; };
+		3363F6C22A779BDE005771C9 /* GameCard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameCard.cpp; sourceTree = "<group>"; };
+		3363F6C32A779BDE005771C9 /* pch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pch.h; sourceTree = "<group>"; };
+		3363F6C42A779BDE005771C9 /* pch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pch.cpp; sourceTree = "<group>"; };
+		3363F6D42A77B20C005771C9 /* Playground.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Playground.cpp; path = gamelib/Playground.cpp; sourceTree = SOURCE_ROOT; };
+		3363F6D52A77B20C005771C9 /* Playground.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Playground.hpp; path = gamelib/Playground.hpp; sourceTree = SOURCE_ROOT; };
+		3363F6D82A77B2C3005771C9 /* UI.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UI.cpp; sourceTree = "<group>"; };
+		3363F6D92A77B2C3005771C9 /* UI.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = UI.hpp; sourceTree = "<group>"; };
+		3363F6DC2A77B3AE005771C9 /* Player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		3363F6DD2A77B3AE005771C9 /* Player.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
+		3363F6E02A77B430005771C9 /* Control.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Control.cpp; sourceTree = "<group>"; };
+		3363F6E12A77B430005771C9 /* Control.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Control.hpp; sourceTree = "<group>"; };
+		3363F6E42A77B5BC005771C9 /* Human.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Human.cpp; sourceTree = "<group>"; };
+		3363F6E52A77B5BC005771C9 /* Human.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Human.hpp; sourceTree = "<group>"; };
+		3363F6E82A77BA09005771C9 /* LowestCardBot.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LowestCardBot.cpp; sourceTree = "<group>"; };
+		3363F6E92A77BA09005771C9 /* LowestCardBot.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LowestCardBot.hpp; sourceTree = "<group>"; };
+		3363F6EC2A77BA68005771C9 /* HighestCardBot.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HighestCardBot.cpp; sourceTree = "<group>"; };
+		3363F6ED2A77BA68005771C9 /* HighestCardBot.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = HighestCardBot.hpp; sourceTree = "<group>"; };
+		3363F6F02A77BB47005771C9 /* RandomBot.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RandomBot.cpp; sourceTree = "<group>"; };
+		3363F6F12A77BB47005771C9 /* RandomBot.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = RandomBot.hpp; sourceTree = "<group>"; };
+		3363F6F72A77D2EA005771C9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		33BB3F752A557ABC0064E0E6 /* Nimm6 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Nimm6; sourceTree = BUILT_PRODUCTS_DIR; };
-		33BB3F782A557ABC0064E0E6 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		33BB3F922A557B520064E0E6 /* libgamelib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libgamelib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		33BB3F942A557B520064E0E6 /* gamelib.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = gamelib.hpp; sourceTree = "<group>"; };
 		33BB3F962A557B520064E0E6 /* gamelibPriv.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = gamelibPriv.hpp; sourceTree = "<group>"; };
@@ -53,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33E620132A7A972E00C329B3 /* libgamelib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +133,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3363F6CF2A779C79005771C9 /* GameCardControl */ = {
+			isa = PBXGroup;
+			children = (
+				3363F6BD2A779BDE005771C9 /* Dealer.cpp */,
+				3363F6BE2A779BDE005771C9 /* Dealer.h */,
+				3363F6BC2A779BDE005771C9 /* framework.h */,
+				3363F6C22A779BDE005771C9 /* GameCard.cpp */,
+				3363F6C02A779BDE005771C9 /* GameCard.h */,
+				3363F6C12A779BDE005771C9 /* GameCardCreator.cpp */,
+				3363F6BF2A779BDE005771C9 /* GameCardCreator.h */,
+				3363F6C42A779BDE005771C9 /* pch.cpp */,
+				3363F6C32A779BDE005771C9 /* pch.h */,
+			);
+			path = GameCardControl;
+			sourceTree = "<group>";
+		};
+		3363F6F92A77DBF9005771C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		33BB3F6C2A557ABC0064E0E6 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +163,7 @@
 				33BB3F932A557B520064E0E6 /* gamelib */,
 				33BB3FA22A557B690064E0E6 /* Tests */,
 				33BB3F762A557ABC0064E0E6 /* Products */,
+				3363F6F92A77DBF9005771C9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,7 +180,7 @@
 		33BB3F772A557ABC0064E0E6 /* Nimm6 */ = {
 			isa = PBXGroup;
 			children = (
-				33BB3F782A557ABC0064E0E6 /* main.cpp */,
+				3363F6F72A77D2EA005771C9 /* main.cpp */,
 			);
 			path = Nimm6;
 			sourceTree = "<group>";
@@ -105,9 +188,26 @@
 		33BB3F932A557B520064E0E6 /* gamelib */ = {
 			isa = PBXGroup;
 			children = (
+				33BB3F982A557B520064E0E6 /* gamelib.cpp */,
 				33BB3F942A557B520064E0E6 /* gamelib.hpp */,
 				33BB3F962A557B520064E0E6 /* gamelibPriv.hpp */,
-				33BB3F982A557B520064E0E6 /* gamelib.cpp */,
+				3363F6E82A77BA09005771C9 /* LowestCardBot.cpp */,
+				3363F6E92A77BA09005771C9 /* LowestCardBot.hpp */,
+				3363F6D82A77B2C3005771C9 /* UI.cpp */,
+				3363F6D92A77B2C3005771C9 /* UI.hpp */,
+				3363F6E02A77B430005771C9 /* Control.cpp */,
+				3363F6E12A77B430005771C9 /* Control.hpp */,
+				3363F6F02A77BB47005771C9 /* RandomBot.cpp */,
+				3363F6F12A77BB47005771C9 /* RandomBot.hpp */,
+				3363F6DC2A77B3AE005771C9 /* Player.cpp */,
+				3363F6DD2A77B3AE005771C9 /* Player.hpp */,
+				3363F6EC2A77BA68005771C9 /* HighestCardBot.cpp */,
+				3363F6ED2A77BA68005771C9 /* HighestCardBot.hpp */,
+				3363F6E42A77B5BC005771C9 /* Human.cpp */,
+				3363F6E52A77B5BC005771C9 /* Human.hpp */,
+				3363F6D42A77B20C005771C9 /* Playground.cpp */,
+				3363F6D52A77B20C005771C9 /* Playground.hpp */,
+				3363F6CF2A779C79005771C9 /* GameCardControl */,
 			);
 			path = gamelib;
 			sourceTree = "<group>";
@@ -128,7 +228,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				33BB3F952A557B520064E0E6 /* gamelib.hpp in Headers */,
+				3363F6D72A77B20C005771C9 /* Playground.hpp in Headers */,
+				3363F6C82A779BDE005771C9 /* GameCardCreator.h in Headers */,
+				3363F6C92A779BDE005771C9 /* GameCard.h in Headers */,
 				33BB3F972A557B520064E0E6 /* gamelibPriv.hpp in Headers */,
+				3363F6DB2A77B2C3005771C9 /* UI.hpp in Headers */,
+				3363F6E32A77B430005771C9 /* Control.hpp in Headers */,
+				3363F6EF2A77BA68005771C9 /* HighestCardBot.hpp in Headers */,
+				3363F6F32A77BB47005771C9 /* RandomBot.hpp in Headers */,
+				3363F6C52A779BDE005771C9 /* framework.h in Headers */,
+				3363F6E72A77B5BC005771C9 /* Human.hpp in Headers */,
+				3363F6CC2A779BDE005771C9 /* pch.h in Headers */,
+				3363F6EB2A77BA09005771C9 /* LowestCardBot.hpp in Headers */,
+				3363F6C72A779BDE005771C9 /* Dealer.h in Headers */,
+				3363F6DF2A77B3AE005771C9 /* Player.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +259,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				33E620122A7A971800C329B3 /* PBXTargetDependency */,
 			);
 			name = Nimm6;
 			productName = Nimm6;
@@ -194,6 +308,9 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					New,
+				);
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					33BB3F742A557ABC0064E0E6 = {
@@ -242,7 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33BB3F792A557ABC0064E0E6 /* main.cpp in Sources */,
+				3363F6F82A77D2EA005771C9 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,7 +367,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3363F6DE2A77B3AE005771C9 /* Player.cpp in Sources */,
+				3363F6EA2A77BA09005771C9 /* LowestCardBot.cpp in Sources */,
+				3363F6F22A77BB47005771C9 /* RandomBot.cpp in Sources */,
+				3363F6EE2A77BA68005771C9 /* HighestCardBot.cpp in Sources */,
+				3363F6D62A77B20C005771C9 /* Playground.cpp in Sources */,
+				3363F6CA2A779BDE005771C9 /* GameCardCreator.cpp in Sources */,
+				3363F6C62A779BDE005771C9 /* Dealer.cpp in Sources */,
 				33BB3F992A557B520064E0E6 /* gamelib.cpp in Sources */,
+				3363F6CD2A779BDE005771C9 /* pch.cpp in Sources */,
+				3363F6CB2A779BDE005771C9 /* GameCard.cpp in Sources */,
+				3363F6DA2A77B2C3005771C9 /* UI.cpp in Sources */,
+				3363F6E22A77B430005771C9 /* Control.cpp in Sources */,
+				3363F6E62A77B5BC005771C9 /* Human.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +398,11 @@
 			isa = PBXTargetDependency;
 			target = 33BB3F912A557B520064E0E6 /* gamelib */;
 			targetProxy = 33BB3FA62A557B690064E0E6 /* PBXContainerItemProxy */;
+		};
+		33E620122A7A971800C329B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 33BB3F912A557B520064E0E6 /* gamelib */;
+			targetProxy = 33E620112A7A971800C329B3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -308,7 +442,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
+				ENABLE_TESTABILITY = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -367,7 +501,9 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -385,16 +521,35 @@
 		33BB3F7D2A557ABC0064E0E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ADDRESS_SANITIZER_CONTAINER_OVERFLOW = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				COPY_HEADERS_RUN_UNIFDEF = NO;
+				DEVELOPMENT_TEAM = 8D54S94T9S;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		33BB3F7E2A557ABC0064E0E6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ADDRESS_SANITIZER_CONTAINER_OVERFLOW = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				COPY_HEADERS_RUN_UNIFDEF = NO;
+				DEVELOPMENT_TEAM = 8D54S94T9S;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
+				LINK_WITH_STANDARD_LIBRARIES = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -405,6 +560,7 @@
 				EXECUTABLE_PREFIX = lib;
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -417,6 +573,7 @@
 				EXECUTABLE_PREFIX = lib;
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
