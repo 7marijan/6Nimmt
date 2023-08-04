@@ -14,7 +14,6 @@ class Playground
 public:
     Playground();
     ~Playground();
-    std::vector<GameCard> startCards;
     void printField();
     void placeCard(std::vector<GameCard> cards, int row, int column, int num);
     int getRightRow(int value);
@@ -22,6 +21,7 @@ public:
     int costOfRow(int row);
     void initField(std::vector<GameCard> startCards);
     int clearRow(int row);
+    int lowestCardOnField();
 
 private:
     std::vector<GameCard> mField[4];

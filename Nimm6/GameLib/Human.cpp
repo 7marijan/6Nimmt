@@ -17,23 +17,11 @@ Human::~Human()
 {
 }
 
-int Human::pickRow()
-{
-    UI UI;
-    int row;
-    
-    UI.giveOutput("Die Ausgewählte Karte passt leider zu keiner Reihe.");
-    UI.giveCostOfRow();
-    row = UI.getPlayerRow();
-    
-    return row;
-}
-
-int Human::pickCard(std::vector<GameCard> cards)
+int Human::pickCard(std::vector<GameCard> cards, int num, std::shared_ptr<Playground> Field)
 {
     UI UI;
     int card;
-    card = UI.getPlayerMove(cards);
+    card = UI.getPlayerMove(cards, num);
     return card;
 }
 
@@ -42,6 +30,9 @@ int Human::findCheapestRow(std::shared_ptr<Playground> Field)
     UI UI;
     int row = -1;
     std::string input;
+    
+    UI.giveOutput("Die Ausgewählte Karte passt leider zu keiner Reihe.");
+    UI.giveCostOfRow(Field);
     
     do
     {

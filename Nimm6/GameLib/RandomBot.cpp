@@ -18,22 +18,9 @@ RandomBot::~RandomBot()
 {
 }
 
-int RandomBot::pickRow()
+int RandomBot::pickCard(std::vector<GameCard> cards, int num, std::shared_ptr<Playground> Field)
 {
-    std::random_device randomDevice;
-    std::mt19937 rng(randomDevice());
-    std::uniform_int_distribution<std::mt19937::result_type> rowRange(0, 3);
-    
-    return rowRange(rng);
-}
-
-int RandomBot::pickCard(std::vector<GameCard> cards)
-{
-    std::random_device randomDevice;
-    std::mt19937 rng(randomDevice());
-    std::uniform_int_distribution<std::mt19937::result_type> cardRange(0,(int)mCards.size());
-        
-    return cardRange(rng);
+    return 0;
 }
 
 int RandomBot::findCheapestRow(std::shared_ptr<Playground> Field)

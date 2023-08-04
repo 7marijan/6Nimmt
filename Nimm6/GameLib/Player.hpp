@@ -18,8 +18,7 @@ public:
     std::vector<GameCard> mCards;
     void addCost(int cost);
     virtual int findCheapestRow(std::shared_ptr<Playground> Field);
-    virtual int pickCard(std::vector<GameCard> cards);
-    virtual int pickRow();
+    virtual int pickCard(std::vector<GameCard> cards, int num, std::shared_ptr<Playground> Field);
     virtual int showPoints();
 
 private:

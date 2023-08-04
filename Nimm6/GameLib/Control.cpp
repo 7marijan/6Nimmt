@@ -12,9 +12,12 @@
 #include "LowestCardBot.hpp"
 #include "HighestCardBot.hpp"
 #include "RandomBot.hpp"
+#include "IntelligentBot.hpp"
 #include "UI.hpp"
 #include <chrono>
 #include <thread>
+#include <unistd.h>
+#include <term.h>
 
 #include "Dealer.h"
 //UI UI;
@@ -32,7 +35,8 @@ void Control::preGame()
 {
     UI UI;
     Dealer Dealer;
-    std::vector<GameCard> playingCards;
+    
+    
     
     UI.giveOutput("Spiel wird gestartet.");
     
@@ -46,6 +50,7 @@ void Control::preGame()
     std::shared_ptr<Player> P1 = choosePlayer("1");
     std::shared_ptr<Player> P2 = choosePlayer("2");
     std::shared_ptr<Playground> Field (new Playground);
+    std::vector<GameCard> playingCards;
     
     P1->mCards = Dealer.Draw(10);
     P2->mCards = Dealer.Draw(10);
@@ -57,50 +62,64 @@ void Control::preGame()
     startGame(P1, P2, Field);
 }
 
-
-
-
-
 int Control::startGame(std::shared_ptr<Player> P1, std::shared_ptr<Player> P2, std::shared_ptr<Playground> Field)
 {
     
     UI UI;
     int card1, card2, column1, column2, row1, row2;
     
+    Field->printField();
+    
     for(int i = 0; i < 10; i ++)
     {
-        Field->printField();
-        
-        card1 = P1->pickCard(P1->mCards);
-        card2 = P2->pickCard(P2->mCards);
+        card1 = P1->pickCard(P1->mCards, 1, Field);
+        card2 = P2->pickCard(P2->mCards, 2, Field);
         
         if(P1->mCards[card1] < P2->mCards[card2])
         {
+            //std::cout << "\nPlayer 1: " << (int)P1->mCards[card1].value << std::endl;
             makeMove(Field, P1, card1, column1, row1);
-            systemSleep();
+            //systemSleep();
             
             Field->printField();
             
-            systemSleep();
+            //std::cout << "\nPlayer 2: " << (int)P2->mCards[card2].value << std::endl;
             makeMove(Field, P2, card2, column2, row2);
+            //systemSleep();
         }
         else
         {
+            //std::cout << "\nPlayer 2: " << (int)P2->mCards[card2].value << std::endl;
             makeMove(Field, P2, card2, column2, row2);
-            systemSleep();
+            //systemSleep();
             
             Field->printField();
             
-            systemSleep();
+            //std::cout << "\nPlayer 1: " << (int)P1->mCards[card1].value << std::endl;
             makeMove(Field, P1, card1, column1, row1);
+            //systemSleep();
         }
         Field->printField();
     }
-    
-    std::cout << "Player 1: " << P1->showPoints() << std::endl;
+
+    std::cout << "\nPlayer 1: " << P1->showPoints() << std::endl;
     std::cout << "Player 2: " << P2->showPoints() << std::endl;
     
-    return 3;
+    if(P1->showPoints() < P2->showPoints())
+    {
+        //UI.giveOutput("\nPlayer 1 hat gewonnen!");
+        return 1;
+    }
+    else if(P1->showPoints() > P2->showPoints())
+    {
+        //UI.giveOutput("\nPlayer 2 hat gewonnen!");
+        return 2;
+    }
+    else
+    {
+        //UI.giveOutput("\nDas Spiel ist unentschieder ausgegangen!");
+        return 3;
+    }
 }
 
 std::shared_ptr<Player> Control::choosePlayer(std::string number)
@@ -133,6 +152,11 @@ std::shared_ptr<Player> Control::choosePlayer(std::string number)
         else if(input == "4")
         {
             std::shared_ptr<Player> P (new RandomBot);
+            return P;
+        }
+        else if(input == "5")
+        {
+            std::shared_ptr<Player> P (new IntelligentBot);
             return P;
         }
         else

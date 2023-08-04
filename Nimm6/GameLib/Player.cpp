@@ -18,7 +18,7 @@ Player::~Player()
 {
 }
 
-int Player::pickCard(std::vector<GameCard> cards)
+int Player::pickCard(std::vector<GameCard> cards, int num, std::shared_ptr<Playground> Field)
 {
     return 1;
 }
@@ -26,11 +26,6 @@ int Player::pickCard(std::vector<GameCard> cards)
 void Player::addCost(int cost)
 {
     mPoints += cost;
-}
-
-int Player::pickRow()
-{
-    return 0;
 }
 
 int Player::showPoints()

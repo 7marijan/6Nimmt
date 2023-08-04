@@ -14,7 +14,6 @@ class HighestCardBot:public Player
 public:
     HighestCardBot();
     ~HighestCardBot();
-    int pickCard(std::vector<GameCard> cards) override;
-    int pickRow() override;
+    int pickCard(std::vector<GameCard> cards, int num, std::shared_ptr<Playground> Field) override;
     int findCheapestRow(std::shared_ptr<Playground> Field) override;
 };

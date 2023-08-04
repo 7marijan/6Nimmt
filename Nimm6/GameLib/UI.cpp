@@ -34,12 +34,14 @@ void UI::giveOutput(std::string output)
     std::cout << output << std::endl;
 }
 
-int UI::getPlayerMove(std::vector<GameCard> cards)
+int UI::getPlayerMove(std::vector<GameCard> cards, int num)
 {
     char input[5], *ptr;
     long temp;
     int pickedCard;
     bool found = false;
+    
+    std::cout << "\nPlayer " << num << ": ";
     
     showCards(cards);
     
@@ -119,12 +121,10 @@ int UI::getPlayerRow()
     
 }
 
-void UI::giveCostOfRow()
+void UI::giveCostOfRow(std::shared_ptr<Playground> Field)
 {
-    Playground Playground;
-    
-    std::cout << " Reihe 1: " << Playground.costOfRow(0);
-    std::cout << " Reihe 2: " << Playground.costOfRow(1);
-    std::cout << " Reihe 3: " << Playground.costOfRow(2);
-    std::cout << " Reihe 4: " << Playground.costOfRow(3);
+    std::cout << " Reihe 1: " << Field->costOfRow(0) << std::endl;
+    std::cout << " Reihe 2: " << Field->costOfRow(1) << std::endl;
+    std::cout << " Reihe 3: " << Field->costOfRow(2) << std::endl;
+    std::cout << " Reihe 4: " << Field->costOfRow(3) << std::endl;
 }

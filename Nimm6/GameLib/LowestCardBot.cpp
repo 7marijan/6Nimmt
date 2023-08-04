@@ -6,8 +6,6 @@
 //
 #include "LowestCardBot.hpp"
 #include "Playground.hpp"
-#include <chrono>
-#include <thread>
 
 LowestCardBot::LowestCardBot()
 {
@@ -17,12 +15,7 @@ LowestCardBot::~LowestCardBot()
 {
 }
 
-int LowestCardBot::pickRow()
-{
-    return 0;
-}
-
-int LowestCardBot::pickCard(std::vector<GameCard> cards)
+int LowestCardBot::pickCard(std::vector<GameCard> cards, int num, std::shared_ptr<Playground> Field)
 {
     int spot = 0, tempSize = 104;
     

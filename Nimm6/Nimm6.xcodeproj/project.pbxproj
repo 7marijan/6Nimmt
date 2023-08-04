@@ -39,6 +39,8 @@
 		33BB3FA42A557B690064E0E6 /* Tests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 33BB3FA32A557B690064E0E6 /* Tests.mm */; };
 		33BB3FA52A557B690064E0E6 /* libgamelib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33BB3F922A557B520064E0E6 /* libgamelib.a */; };
 		33E620132A7A972E00C329B3 /* libgamelib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33BB3F922A557B520064E0E6 /* libgamelib.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		33E6201C2A7CECD400C329B3 /* IntelligentBot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33E6201A2A7CECD400C329B3 /* IntelligentBot.cpp */; };
+		33E6201D2A7CECD400C329B3 /* IntelligentBot.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 33E6201B2A7CECD400C329B3 /* IntelligentBot.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 33BB3F912A557B520064E0E6;
 			remoteInfo = gamelib;
+		};
+		33E620142A7CE13200C329B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33BB3F6D2A557ABC0064E0E6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33BB3F742A557ABC0064E0E6;
+			remoteInfo = Nimm6;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -104,6 +113,9 @@
 		33BB3F982A557B520064E0E6 /* gamelib.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = gamelib.cpp; sourceTree = "<group>"; };
 		33BB3FA12A557B690064E0E6 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33BB3FA32A557B690064E0E6 /* Tests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Tests.mm; sourceTree = "<group>"; };
+		33E620192A7CE33000C329B3 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
+		33E6201A2A7CECD400C329B3 /* IntelligentBot.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = IntelligentBot.cpp; sourceTree = "<group>"; };
+		33E6201B2A7CECD400C329B3 /* IntelligentBot.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = IntelligentBot.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +171,7 @@
 		33BB3F6C2A557ABC0064E0E6 = {
 			isa = PBXGroup;
 			children = (
+				33E620192A7CE33000C329B3 /* TestPlan.xctestplan */,
 				33BB3F772A557ABC0064E0E6 /* Nimm6 */,
 				33BB3F932A557B520064E0E6 /* gamelib */,
 				33BB3FA22A557B690064E0E6 /* Tests */,
@@ -191,22 +204,24 @@
 				33BB3F982A557B520064E0E6 /* gamelib.cpp */,
 				33BB3F942A557B520064E0E6 /* gamelib.hpp */,
 				33BB3F962A557B520064E0E6 /* gamelibPriv.hpp */,
-				3363F6E82A77BA09005771C9 /* LowestCardBot.cpp */,
-				3363F6E92A77BA09005771C9 /* LowestCardBot.hpp */,
-				3363F6D82A77B2C3005771C9 /* UI.cpp */,
-				3363F6D92A77B2C3005771C9 /* UI.hpp */,
 				3363F6E02A77B430005771C9 /* Control.cpp */,
 				3363F6E12A77B430005771C9 /* Control.hpp */,
-				3363F6F02A77BB47005771C9 /* RandomBot.cpp */,
-				3363F6F12A77BB47005771C9 /* RandomBot.hpp */,
-				3363F6DC2A77B3AE005771C9 /* Player.cpp */,
-				3363F6DD2A77B3AE005771C9 /* Player.hpp */,
-				3363F6EC2A77BA68005771C9 /* HighestCardBot.cpp */,
-				3363F6ED2A77BA68005771C9 /* HighestCardBot.hpp */,
-				3363F6E42A77B5BC005771C9 /* Human.cpp */,
-				3363F6E52A77B5BC005771C9 /* Human.hpp */,
 				3363F6D42A77B20C005771C9 /* Playground.cpp */,
 				3363F6D52A77B20C005771C9 /* Playground.hpp */,
+				3363F6D82A77B2C3005771C9 /* UI.cpp */,
+				3363F6D92A77B2C3005771C9 /* UI.hpp */,
+				3363F6DC2A77B3AE005771C9 /* Player.cpp */,
+				3363F6DD2A77B3AE005771C9 /* Player.hpp */,
+				3363F6E42A77B5BC005771C9 /* Human.cpp */,
+				3363F6E52A77B5BC005771C9 /* Human.hpp */,
+				3363F6E82A77BA09005771C9 /* LowestCardBot.cpp */,
+				3363F6E92A77BA09005771C9 /* LowestCardBot.hpp */,
+				3363F6EC2A77BA68005771C9 /* HighestCardBot.cpp */,
+				3363F6ED2A77BA68005771C9 /* HighestCardBot.hpp */,
+				3363F6F02A77BB47005771C9 /* RandomBot.cpp */,
+				3363F6F12A77BB47005771C9 /* RandomBot.hpp */,
+				33E6201A2A7CECD400C329B3 /* IntelligentBot.cpp */,
+				33E6201B2A7CECD400C329B3 /* IntelligentBot.hpp */,
 				3363F6CF2A779C79005771C9 /* GameCardControl */,
 			);
 			path = gamelib;
@@ -239,6 +254,7 @@
 				3363F6C52A779BDE005771C9 /* framework.h in Headers */,
 				3363F6E72A77B5BC005771C9 /* Human.hpp in Headers */,
 				3363F6CC2A779BDE005771C9 /* pch.h in Headers */,
+				33E6201D2A7CECD400C329B3 /* IntelligentBot.hpp in Headers */,
 				3363F6EB2A77BA09005771C9 /* LowestCardBot.hpp in Headers */,
 				3363F6C72A779BDE005771C9 /* Dealer.h in Headers */,
 				3363F6DF2A77B3AE005771C9 /* Player.hpp in Headers */,
@@ -294,6 +310,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				33E620152A7CE13200C329B3 /* PBXTargetDependency */,
 				33BB3FA72A557B690064E0E6 /* PBXTargetDependency */,
 			);
 			name = Tests;
@@ -376,6 +393,7 @@
 				3363F6C62A779BDE005771C9 /* Dealer.cpp in Sources */,
 				33BB3F992A557B520064E0E6 /* gamelib.cpp in Sources */,
 				3363F6CD2A779BDE005771C9 /* pch.cpp in Sources */,
+				33E6201C2A7CECD400C329B3 /* IntelligentBot.cpp in Sources */,
 				3363F6CB2A779BDE005771C9 /* GameCard.cpp in Sources */,
 				3363F6DA2A77B2C3005771C9 /* UI.cpp in Sources */,
 				3363F6E22A77B430005771C9 /* Control.cpp in Sources */,
@@ -403,6 +421,11 @@
 			isa = PBXTargetDependency;
 			target = 33BB3F912A557B520064E0E6 /* gamelib */;
 			targetProxy = 33E620112A7A971800C329B3 /* PBXContainerItemProxy */;
+		};
+		33E620152A7CE13200C329B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 33BB3F742A557ABC0064E0E6 /* Nimm6 */;
+			targetProxy = 33E620142A7CE13200C329B3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

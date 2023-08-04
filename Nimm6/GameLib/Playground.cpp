@@ -139,3 +139,51 @@ int Playground::costOfRow(int row)
     
     return cost;
 }
+
+int Playground::lowestCardOnField()
+{
+    int value = 104, temp;
+    bool found = false;
+    
+    for(int i = 0; i < 4; i++)
+    {
+        for(int j = 5; j >= 0; j--)
+        {
+            if(mField[i][j].value != initCard.value && j < 4)
+            {
+                temp = mField[i][j].value;
+                if(temp < value)
+                {
+                    value = temp;
+                    found = true;
+                    break;
+                }
+                break;
+            }
+            
+        }
+    }
+    
+    if(found == false)
+    {
+        for(int i = 0; i < 4; i++)
+        {
+            for(int j = 5; j >= 0; j--)
+            {
+                if(mField[i][j].value != initCard.value)
+                {
+                    temp = mField[i][j].value;
+                    if(temp < value)
+                    {
+                        value = temp;
+                        break;
+                    }
+                    break;
+                }
+                
+            }
+        }
+    }
+    
+    return value;
+}

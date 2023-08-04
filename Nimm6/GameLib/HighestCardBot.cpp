@@ -17,12 +17,7 @@ HighestCardBot::~HighestCardBot()
 {
 }
 
-int HighestCardBot::pickRow()
-{
-    return 0;
-}
-
-int HighestCardBot::pickCard(std::vector<GameCard> cards)
+int HighestCardBot::pickCard(std::vector<GameCard> cards, int num, std::shared_ptr<Playground> Field)
 {
     int spot = 0, tempSize = 0;
     

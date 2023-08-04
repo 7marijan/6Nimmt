@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "E3C00D23-6507-43FC-A2FB-E62EFE4324F8",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Nimm6.xcodeproj",
+        "identifier" : "33BB3FA02A557B690064E0E6",
+        "name" : "Tests"
+      }
+    }
+  ],
+  "version" : 1
+}

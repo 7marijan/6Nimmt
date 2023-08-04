@@ -8,6 +8,7 @@
 #pragma once
 #include <string>
 #include "GameCard.h"
+#include "Playground.hpp"
 #include <memory>
 
 class UI
@@ -17,9 +18,9 @@ public:
     ~UI();
     std::string getUserInput(std::string message);
     void giveOutput(std::string output);
-    int getPlayerMove(std::vector<GameCard> cards);
+    int getPlayerMove(std::vector<GameCard> cards, int num);
     int getPlayerRow();
-    void giveCostOfRow();
+    void giveCostOfRow(std::shared_ptr<Playground> Field);
     
 private:
     void showCards(std::vector<GameCard> cards);
