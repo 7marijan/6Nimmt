@@ -171,16 +171,7 @@ std::shared_ptr<Player> Control::choosePlayer(const std::string number) const
 
 void Control::clearFieldAddCost(const std::shared_ptr<Playground> &Field, std::shared_ptr<Player> &P, const int card, const int column, const int row)
 {
-    std::cout << "Vor dem Clear: " << P->showPoints() << std::endl;
-    
     P->addCost(Field->costOfRow(row));
-    
-    std::cout << "Nach dem Clear: " << P->showPoints() << std::endl;
-    
-    
-    std::cout << Field->costOfRow(row);
-    
-    
     Field->clearRow(row);
     Field->placeCard(P->mCards, row, column, card);
 }
@@ -198,9 +189,7 @@ void Control::makeMove(const std::shared_ptr<Playground> &Field, std::shared_ptr
     }
     else
     {
-        std::cout << "TEST TEST TEST TEST" << std::endl;
-        
-        column = Field->getRightColumn(P->mCards[card].value, row);
+        column = Field->getRightColumn(row);
         
         if(column == 5)
         {

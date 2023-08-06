@@ -17,7 +17,7 @@ public:
     void printField();
     void placeCard(std::vector<GameCard> cards, int row, int column, int num);
     int getRightRow(const int value) const;
-    int getRightColumn(const int value, const int row);
+    int getRightColumn(const int row);
     int costOfRow(int row);
     void initField(const std::vector<GameCard> startCards);
     void clearRow(int row);

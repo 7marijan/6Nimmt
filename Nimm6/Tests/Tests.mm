@@ -75,7 +75,7 @@
     for(int i = 0; i < 1000; i++)
     {
         Dealer Dealer;
-        std::shared_ptr<Player> P1(new IntelligentBot);
+        std::shared_ptr<Player> P1(new LowestCardBot);
         std::shared_ptr<Player> P2(new HighestCardBot);
         std::shared_ptr<Playground> Field (new Playground);
         std::vector<GameCard> playingCards;
@@ -120,7 +120,7 @@
     for(int i = 0; i < 1000; i++)
     {
         Dealer Dealer;
-        std::shared_ptr<Player> P1(new IntelligentBot);
+        std::shared_ptr<Player> P1(new LowestCardBot);
         std::shared_ptr<Player> P2(new RandomBot);
         std::shared_ptr<Playground> Field (new Playground);
         std::vector<GameCard> playingCards;

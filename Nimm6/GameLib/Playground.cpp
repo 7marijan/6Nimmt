@@ -91,7 +91,7 @@ int Playground::getRightRow(const int value) const
     return row;
 }
 
-int Playground::getRightColumn(const int value, const int row)
+int Playground::getRightColumn(const int row)
 {
     int column = 5;
     
@@ -103,13 +103,6 @@ int Playground::getRightColumn(const int value, const int row)
             column = j + 1;
             break;
         }
-        
-    }
-    
-    if(column == 5)
-    {
-        clearRow(row);
-        column = 0;
     }
     
     return column;
