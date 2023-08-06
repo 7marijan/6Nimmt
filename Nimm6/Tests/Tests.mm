@@ -25,7 +25,8 @@
 {
     Control Control;
     
-    int whoWon, one = 0, two = 0, draw = 0;
+    int whoWon;
+    float intelligent = 0, lowest = 0, draw = 0;
     
     for(int i = 0; i < 1000; i++)
     {
@@ -47,22 +48,25 @@
         
         if(whoWon == 1)
         {
-            one++;
+            intelligent++;
         }
         else if(whoWon == 2)
         {
-            two++;
+            lowest++;
         }
         else if(whoWon == 3)
         {
             draw++;
         }
-        
     }
     
-    std::cout << "Bot1: " << one << std::endl;
-    std::cout << "Bot2: " << two << std::endl;
-    std::cout << "Draw : " << draw << std::endl;
+    intelligent = intelligent / 10;
+    lowest = lowest / 10;
+    draw = draw / 10;
+    
+    std::cout << "\nIntelligentBot: " << intelligent << "%" << std::endl;
+    std::cout << "LowestCardBot: " << lowest << "%" << std::endl;
+    std::cout << "Unentschieden: " << draw << "%\n" << std::endl;
     
 }
 
@@ -70,12 +74,13 @@
 {
     Control Control;
     
-    int whoWon, one = 0, two = 0, draw = 0;
+    int whoWon;
+    float intelligent = 0, highest = 0, draw = 0;
     
     for(int i = 0; i < 1000; i++)
     {
         Dealer Dealer;
-        std::shared_ptr<Player> P1(new LowestCardBot);
+        std::shared_ptr<Player> P1(new IntelligentBot);
         std::shared_ptr<Player> P2(new HighestCardBot);
         std::shared_ptr<Playground> Field (new Playground);
         std::vector<GameCard> playingCards;
@@ -92,22 +97,25 @@
         
         if(whoWon == 1)
         {
-            one++;
+            intelligent++;
         }
         else if(whoWon == 2)
         {
-            two++;
+            highest++;
         }
         else if(whoWon == 3)
         {
             draw++;
         }
-        
     }
     
-    std::cout << "LowestCardBot: " << one << std::endl;
-    std::cout << "HighestCardBot: " << two << std::endl;
-    std::cout << "Draw: " << draw << std::endl;
+    intelligent = intelligent / 10;
+    highest = highest / 10;
+    draw = draw / 10;
+    
+    std::cout << "\nIntelligentBot: " << intelligent << "%" << std::endl;
+    std::cout << "HighestCardBot: " << highest << "%" << std::endl;
+    std::cout << "Unentschieden: " << draw << "%\n" << std::endl;
     
 }
 
@@ -115,12 +123,13 @@
 {
     Control Control;
     
-    int whoWon, one = 0, two = 0, draw = 0;
+    int whoWon;
+    float intelligent = 0, randombot = 0, draw = 0;
     
     for(int i = 0; i < 1000; i++)
     {
         Dealer Dealer;
-        std::shared_ptr<Player> P1(new LowestCardBot);
+        std::shared_ptr<Player> P1(new IntelligentBot);
         std::shared_ptr<Player> P2(new RandomBot);
         std::shared_ptr<Playground> Field (new Playground);
         std::vector<GameCard> playingCards;
@@ -137,40 +146,26 @@
         
         if(whoWon == 1)
         {
-            one++;
+            intelligent++;
         }
         else if(whoWon == 2)
         {
-            two++;
+            randombot++;
         }
         else if(whoWon == 3)
         {
             draw++;
         }
-        
     }
     
-    std::cout << "LowestCardBot: " << one << std::endl;
-    std::cout << "RandomBot: " << two << std::endl;
-    std::cout << "Draw: " << draw << std::endl;
+    intelligent = intelligent / 10;
+    randombot = randombot / 10;
+    draw = draw / 10;
+    
+    std::cout << "\nIntelligentBot: " << intelligent << "%" << std::endl;
+    std::cout << "RandomBot: " << randombot << "%" << std::endl;
+    std::cout << "Unentschieden: " << draw << "%\n" << std::endl;
     
 }
 
-/*
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-}
-
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
-}
-*/
 @end

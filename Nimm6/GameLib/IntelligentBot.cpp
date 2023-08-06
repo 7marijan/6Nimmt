@@ -43,8 +43,6 @@ int IntelligentBot::pickCard(const std::vector<GameCard> cards, const int num, c
     {
         tempSize = 104;
         
-        std::cout << "testo" << std::endl;
-        
         for(int i = 0; i < cards.size(); i++)
         {
             if(cards[i].value < tempSize)

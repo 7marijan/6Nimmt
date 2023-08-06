@@ -21,7 +21,7 @@ public:
 
 private:
     std::shared_ptr<Player> choosePlayer(const std::string number) const;
-    void clearFieldAddCost(const std::shared_ptr<Playground> &Field, std::shared_ptr<Player> &P, const int card, const int column, const int row);
-    void makeMove(const std::shared_ptr<Playground> &Field, std::shared_ptr<Player> &P, int card);
+    void clearFieldAddCost(const std::shared_ptr<Playground> Field, std::shared_ptr<Player> P, const int card, const int column, const int row);
+    void makeMove(const std::shared_ptr<Playground> Field, std::shared_ptr<Player> P, int card);
     void systemSleep() const;
 };

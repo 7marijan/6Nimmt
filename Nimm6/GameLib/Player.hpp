@@ -21,6 +21,8 @@ public:
     virtual int pickCard(std::vector<GameCard> cards, int num, std::shared_ptr<Playground> Field);
     void showCards() const;
     virtual int showPoints();
+    
+protected:
     int mPoints;
 
     
