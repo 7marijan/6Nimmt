@@ -15,9 +15,5 @@ class IntelligentBot:public Player
 public:
     IntelligentBot();
     ~IntelligentBot();
-    int findCheapestRow(std::shared_ptr<Playground> Field) override;
-    int pickCard(std::vector<GameCard> cards, int num, std::shared_ptr<Playground> Field)override;
-
-private:
-    int mCount;
-};
+    int findCheapestRow(const std::shared_ptr<Playground> Field) override;
+    int pickCard(const std::vector<GameCard> cards, const int num, const std::shared_ptr<Playground> Field)override;};

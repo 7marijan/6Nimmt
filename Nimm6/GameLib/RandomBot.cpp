@@ -23,7 +23,7 @@ int RandomBot::pickCard(std::vector<GameCard> cards, int num, std::shared_ptr<Pl
     return 0;
 }
 
-int RandomBot::findCheapestRow(std::shared_ptr<Playground> Field)
+int RandomBot::findCheapestRow(const std::shared_ptr<Playground> Field)
 {
     std::random_device randomDevice;
     std::mt19937 rng(randomDevice());

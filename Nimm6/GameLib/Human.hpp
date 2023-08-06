@@ -15,5 +15,5 @@ public:
     Human();
     ~Human();
     std::vector<GameCard> mCards;
-    int findCheapestRow(std::shared_ptr<Playground> Field) override;
-    int pickCard(std::vector<GameCard> cards, int num, std::shared_ptr<Playground> Field) override;};
+    int findCheapestRow(const std::shared_ptr<Playground> Field) override;
+    int pickCard(const std::vector<GameCard> cards, const int num, const std::shared_ptr<Playground> Field) override;};

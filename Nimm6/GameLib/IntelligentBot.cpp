@@ -7,21 +7,22 @@
 
 #include "IntelligentBot.hpp"
 #include "Playground.hpp"
+#include <iostream>
+
 
 IntelligentBot::IntelligentBot()
 {
-    mCount = 0;
 }
 
 IntelligentBot::~IntelligentBot()
 {
 }
 
-int IntelligentBot::pickCard(std::vector<GameCard> cards, int num, std::shared_ptr<Playground> Field)
+int IntelligentBot::pickCard(const std::vector<GameCard> cards, const int num, const std::shared_ptr<Playground> Field)
 {
-    int lowestCard, dif = 0, tempSize = 104, spot = 0;
+    int lowestCard, dif, tempSize = 104, spot = 0;
     bool found = false;
-    lowestCard = Field->lowestCardOnField();
+    lowestCard = Field->lowestCardOnField(0);
     
     for(int i = 0; i < cards.size(); i++)
     {
@@ -31,15 +32,19 @@ int IntelligentBot::pickCard(std::vector<GameCard> cards, int num, std::shared_p
         {
             if(tempSize > dif)
             {
-                tempSize = cards[i].value;
+                tempSize = dif;
                 spot = i;
                 found = true;
             }
         }
     }
     
-    if(found != true)
+    if(found == false)
     {
+        tempSize = 104;
+        
+        std::cout << "testo" << std::endl;
+        
         for(int i = 0; i < cards.size(); i++)
         {
             if(cards[i].value < tempSize)
@@ -53,7 +58,7 @@ int IntelligentBot::pickCard(std::vector<GameCard> cards, int num, std::shared_p
     return spot;
 }
 
-int IntelligentBot::findCheapestRow(std::shared_ptr<Playground> Field)
+int IntelligentBot::findCheapestRow(const std::shared_ptr<Playground> Field)
 {
     int cheapestRow = 28, row = 0;
     

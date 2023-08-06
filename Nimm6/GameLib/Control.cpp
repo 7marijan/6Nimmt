@@ -54,6 +54,8 @@ void Control::preGame()
     
     P1->mCards = Dealer.Draw(10);
     P2->mCards = Dealer.Draw(10);
+    P1->mPoints = 0;
+    P2->mPoints = 0;
     playingCards = Dealer.Draw(4);
     
     
@@ -62,11 +64,11 @@ void Control::preGame()
     startGame(P1, P2, Field);
 }
 
-int Control::startGame(std::shared_ptr<Player> P1, std::shared_ptr<Player> P2, std::shared_ptr<Playground> Field)
+int Control::startGame( std::shared_ptr<Player> P1, std::shared_ptr<Player> P2, const std::shared_ptr<Playground> Field)
 {
     
     UI UI;
-    int card1, card2, column1, column2, row1, row2;
+    int card1 = 0, card2 = 0;
     
     Field->printField();
     
@@ -74,29 +76,29 @@ int Control::startGame(std::shared_ptr<Player> P1, std::shared_ptr<Player> P2, s
     {
         card1 = P1->pickCard(P1->mCards, 1, Field);
         card2 = P2->pickCard(P2->mCards, 2, Field);
-        
+            
         if(P1->mCards[card1] < P2->mCards[card2])
         {
             //std::cout << "\nPlayer 1: " << (int)P1->mCards[card1].value << std::endl;
-            makeMove(Field, P1, card1, column1, row1);
+            makeMove(Field, P1, card1);
             //systemSleep();
             
             Field->printField();
             
             //std::cout << "\nPlayer 2: " << (int)P2->mCards[card2].value << std::endl;
-            makeMove(Field, P2, card2, column2, row2);
+            makeMove(Field, P2, card2);
             //systemSleep();
         }
         else
         {
             //std::cout << "\nPlayer 2: " << (int)P2->mCards[card2].value << std::endl;
-            makeMove(Field, P2, card2, column2, row2);
+            makeMove(Field, P2, card2);
             //systemSleep();
             
             Field->printField();
             
             //std::cout << "\nPlayer 1: " << (int)P1->mCards[card1].value << std::endl;
-            makeMove(Field, P1, card1, column1, row1);
+            makeMove(Field, P1, card1);
             //systemSleep();
         }
         Field->printField();
@@ -122,7 +124,7 @@ int Control::startGame(std::shared_ptr<Player> P1, std::shared_ptr<Player> P2, s
     }
 }
 
-std::shared_ptr<Player> Control::choosePlayer(std::string number)
+std::shared_ptr<Player> Control::choosePlayer(const std::string number) const
 {
     
     UI UI;
@@ -167,15 +169,26 @@ std::shared_ptr<Player> Control::choosePlayer(std::string number)
     
 }
 
-void Control::clearFieldAddCost(const std::shared_ptr<Playground> &Field, const std::shared_ptr<Player> &P, int card, int column, int row)
+void Control::clearFieldAddCost(const std::shared_ptr<Playground> &Field, std::shared_ptr<Player> &P, const int card, const int column, const int row)
 {
+    std::cout << "Vor dem Clear: " << P->showPoints() << std::endl;
+    
     P->addCost(Field->costOfRow(row));
+    
+    std::cout << "Nach dem Clear: " << P->showPoints() << std::endl;
+    
+    
+    std::cout << Field->costOfRow(row);
+    
+    
     Field->clearRow(row);
     Field->placeCard(P->mCards, row, column, card);
 }
 
-void Control::makeMove(const std::shared_ptr<Playground> &Field, const std::shared_ptr<Player> &P, int card, int &column, int &row)
+void Control::makeMove(const std::shared_ptr<Playground> &Field, std::shared_ptr<Player> &P, int card)
 {
+    int row, column;
+    
     row = Field->getRightRow(P->mCards[card].value);
     
     if(row == -1)
@@ -185,6 +198,8 @@ void Control::makeMove(const std::shared_ptr<Playground> &Field, const std::shar
     }
     else
     {
+        std::cout << "TEST TEST TEST TEST" << std::endl;
+        
         column = Field->getRightColumn(P->mCards[card].value, row);
         
         if(column == 5)
@@ -200,7 +215,7 @@ void Control::makeMove(const std::shared_ptr<Playground> &Field, const std::shar
     P->mCards.erase(P->mCards.begin()+card);
 }
 
-void Control::systemSleep()
+void Control::systemSleep() const
 {
     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 }

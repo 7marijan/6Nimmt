@@ -16,12 +16,12 @@ class UI
 public:
     UI();
     ~UI();
-    std::string getUserInput(std::string message);
-    void giveOutput(std::string output);
-    int getPlayerMove(std::vector<GameCard> cards, int num);
-    int getPlayerRow();
-    void giveCostOfRow(std::shared_ptr<Playground> Field);
+    std::string getUserInput(const std::string message) const;
+    void giveOutput(const std::string output) const;
+    int getPlayerMove(const std::vector<GameCard> cards, const int num) const;
+    int getPlayerRow() const;
+    void giveCostOfRow(const std::shared_ptr<Playground> Field) const;
     
 private:
-    void showCards(std::vector<GameCard> cards);
+    void showCards(const std::vector<GameCard> cards) const;
 };

@@ -17,7 +17,7 @@ HighestCardBot::~HighestCardBot()
 {
 }
 
-int HighestCardBot::pickCard(std::vector<GameCard> cards, int num, std::shared_ptr<Playground> Field)
+int HighestCardBot::pickCard(const std::vector<GameCard> cards, const int num, const std::shared_ptr<Playground> Field)
 {
     int spot = 0, tempSize = 0;
     
@@ -33,7 +33,7 @@ int HighestCardBot::pickCard(std::vector<GameCard> cards, int num, std::shared_p
     return spot;
 }
 
-int HighestCardBot::findCheapestRow(std::shared_ptr<Playground> Field)
+int HighestCardBot::findCheapestRow(const std::shared_ptr<Playground> Field)
 {
     
     int cheapestRow = 28, row = 0;

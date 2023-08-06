@@ -17,11 +17,11 @@ public:
     Control();
     ~Control();
     void preGame();
-    int startGame(std::shared_ptr<Player> P1, std::shared_ptr<Player> P2, std::shared_ptr<Playground> Field);
+    int startGame( std::shared_ptr<Player> P1, std::shared_ptr<Player> P2, const std::shared_ptr<Playground> Field);
 
 private:
-    std::shared_ptr<Player> choosePlayer(std::string number);
-    void clearFieldAddCost(const std::shared_ptr<Playground> &Field, const std::shared_ptr<Player> &P, int card, int column, int row);
-    void makeMove(const std::shared_ptr<Playground> &Field, const std::shared_ptr<Player> &P1, int card1, int &column1, int &row1);
-    void systemSleep();
+    std::shared_ptr<Player> choosePlayer(const std::string number) const;
+    void clearFieldAddCost(const std::shared_ptr<Playground> &Field, std::shared_ptr<Player> &P, const int card, const int column, const int row);
+    void makeMove(const std::shared_ptr<Playground> &Field, std::shared_ptr<Player> &P, int card);
+    void systemSleep() const;
 };

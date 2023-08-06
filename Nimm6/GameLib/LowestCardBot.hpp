@@ -14,6 +14,6 @@ class LowestCardBot:public Player
 public:
     LowestCardBot();
     ~LowestCardBot();
-    int pickCard(std::vector<GameCard> cards, int num, std::shared_ptr<Playground> Field) override;
-    int findCheapestRow(std::shared_ptr<Playground> Field) override;
+    int pickCard(const std::vector<GameCard> cards, const int num, const std::shared_ptr<Playground> Field) override;
+    int findCheapestRow(const std::shared_ptr<Playground> Field) override;
 };

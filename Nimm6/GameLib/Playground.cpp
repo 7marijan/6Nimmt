@@ -21,7 +21,7 @@ Playground::~Playground()
 {
 }
 
-void Playground::initField(std::vector<GameCard> startCards)
+void Playground::initField(const std::vector<GameCard> startCards)
 {
     initCard = {0, 0};
     
@@ -66,7 +66,7 @@ void Playground::placeCard(std::vector<GameCard> cards, int row, int column, int
     mField[row][column] = cards[num];
 }
 
-int Playground::getRightRow(int value)
+int Playground::getRightRow(const int value) const
 {
     int row = -1, temp = 104, dif = 0;
     
@@ -91,7 +91,7 @@ int Playground::getRightRow(int value)
     return row;
 }
 
-int Playground::getRightColumn(int value, int row)
+int Playground::getRightColumn(const int value, const int row)
 {
     int column = 5;
     
@@ -115,17 +115,12 @@ int Playground::getRightColumn(int value, int row)
     return column;
 }
 
-int Playground::clearRow(int row)
+void Playground::clearRow(int row)
 {
-    int cost = 0;
-    
     for(int i = 0; i < 6; i++)
     {
-        cost += mField[row][i].cost;
         mField[row][i] = initCard;
     }
-    
-    return cost;
 }
 
 int Playground::costOfRow(int row)
@@ -140,50 +135,47 @@ int Playground::costOfRow(int row)
     return cost;
 }
 
-int Playground::lowestCardOnField()
+int Playground::lowestCardOnField(int forbiddenCard) const
 {
-    int value = 104, temp;
+    
+    int value = 105, temp;
     bool found = false;
     
     for(int i = 0; i < 4; i++)
     {
         for(int j = 5; j >= 0; j--)
         {
-            if(mField[i][j].value != initCard.value && j < 4)
+            if(mField[i][j].value != initCard.value)
             {
-                temp = mField[i][j].value;
-                if(temp < value)
+                if(mField[i][j].value != forbiddenCard)
                 {
-                    value = temp;
-                    found = true;
-                    break;
-                }
-                break;
-            }
-            
-        }
-    }
-    
-    if(found == false)
-    {
-        for(int i = 0; i < 4; i++)
-        {
-            for(int j = 5; j >= 0; j--)
-            {
-                if(mField[i][j].value != initCard.value)
-                {
-                    temp = mField[i][j].value;
-                    if(temp < value)
+                    forbiddenCard = mField[i][j].value;
+                    if(j >= 4)
                     {
-                        value = temp;
                         break;
                     }
-                    break;
+                    else
+                    {
+                        temp = mField[i][j].value;
+                        if(temp < value)
+                        {
+                            value = temp;
+                            found = true;
+                            break;
+                        }
+                    }
                 }
-                
             }
         }
     }
     
-    return value;
+    if(found == true)
+    {
+        return value;
+    }
+    else
+    {
+        return 1;
+    }
+    
 }

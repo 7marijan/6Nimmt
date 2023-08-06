@@ -9,6 +9,7 @@
 #include "UI.hpp"
 #include "Dealer.h"
 #include "Playground.hpp"
+#include <iostream>
 
 Player::Player()
 {
@@ -23,21 +24,28 @@ int Player::pickCard(std::vector<GameCard> cards, int num, std::shared_ptr<Playg
     return 1;
 }
 
-void Player::addCost(int cost)
-{
-    mPoints += cost;
-}
-
 int Player::showPoints()
 {
     return mPoints;
 }
 
-int Player::findCheapestRow(std::shared_ptr<Playground> Field)
+void Player::addCost(const int cost)
+{
+    mPoints += cost;
+}
+
+int Player::findCheapestRow(const std::shared_ptr<Playground> Field)
 {
     return 0;
 }
 
-
+void Player::showCards() const
+{
+    for(int i = 0; i < mCards.size(); i++)
+    {
+        std::cout << "| " << (int)mCards[i].value;
+    }
+    std::cout << " |" << std::endl;
+}
 
 

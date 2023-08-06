@@ -17,7 +17,7 @@ Human::~Human()
 {
 }
 
-int Human::pickCard(std::vector<GameCard> cards, int num, std::shared_ptr<Playground> Field)
+int Human::pickCard(const std::vector<GameCard> cards, const int num, const std::shared_ptr<Playground> Field)
 {
     UI UI;
     int card;
@@ -25,7 +25,7 @@ int Human::pickCard(std::vector<GameCard> cards, int num, std::shared_ptr<Playgr
     return card;
 }
 
-int Human::findCheapestRow(std::shared_ptr<Playground> Field)
+int Human::findCheapestRow(const std::shared_ptr<Playground> Field)
 {
     UI UI;
     int row = -1;

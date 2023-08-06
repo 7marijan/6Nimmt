@@ -16,12 +16,12 @@ public:
     Player();
     ~Player();
     std::vector<GameCard> mCards;
-    void addCost(int cost);
-    virtual int findCheapestRow(std::shared_ptr<Playground> Field);
+    virtual void addCost(const int cost);
+    virtual int findCheapestRow(const std::shared_ptr<Playground> Field);
     virtual int pickCard(std::vector<GameCard> cards, int num, std::shared_ptr<Playground> Field);
+    void showCards() const;
     virtual int showPoints();
-
-private:
     int mPoints;
+
     
 };

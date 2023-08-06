@@ -15,7 +15,7 @@ LowestCardBot::~LowestCardBot()
 {
 }
 
-int LowestCardBot::pickCard(std::vector<GameCard> cards, int num, std::shared_ptr<Playground> Field)
+int LowestCardBot::pickCard(const std::vector<GameCard> cards, const int num, const std::shared_ptr<Playground> Field)
 {
     int spot = 0, tempSize = 104;
     
@@ -31,7 +31,7 @@ int LowestCardBot::pickCard(std::vector<GameCard> cards, int num, std::shared_pt
     return spot;
 }
 
-int LowestCardBot::findCheapestRow(std::shared_ptr<Playground> Field)
+int LowestCardBot::findCheapestRow(const std::shared_ptr<Playground> Field)
 {
     int cheapestRow = 28, row = 0;
     

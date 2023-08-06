@@ -19,7 +19,7 @@ UI::~UI()
 {
 }
 
-std::string UI::getUserInput(std::string message)
+std::string UI::getUserInput(const std::string message) const
 {
     std::string i;
     
@@ -29,12 +29,12 @@ std::string UI::getUserInput(std::string message)
     return i;
 }
 
-void UI::giveOutput(std::string output)
+void UI::giveOutput(const std::string output) const
 {
     std::cout << output << std::endl;
 }
 
-int UI::getPlayerMove(std::vector<GameCard> cards, int num)
+int UI::getPlayerMove(const std::vector<GameCard> cards, const int num) const
 {
     char input[5], *ptr;
     long temp;
@@ -57,7 +57,7 @@ int UI::getPlayerMove(std::vector<GameCard> cards, int num)
         
         for(int i = 0; i < cards.size(); i++)
         {
-            if(pickedCard == cards[i].value)
+            if(pickedCard == cards[i].value && *ptr == '\0')
             {
                 found = true;
                 pickedCard = i;
@@ -74,7 +74,7 @@ int UI::getPlayerMove(std::vector<GameCard> cards, int num)
     return pickedCard;
 }
 
-void UI::showCards(std::vector<GameCard> cards)
+void UI::showCards(const std::vector<GameCard> cards) const
 {
     std::cout << "\nDeine Verfügbaren Karten:";
     
@@ -89,7 +89,7 @@ void UI::showCards(std::vector<GameCard> cards)
 }
 
 
-int UI::getPlayerRow()
+int UI::getPlayerRow() const
 {
     char input[5], *ptr;
     long temp;
@@ -106,7 +106,7 @@ int UI::getPlayerRow()
         
         std::cin.clear();
         
-        if(pickedRow > 4 || pickedRow < 1)
+        if((pickedRow > 4 || pickedRow < 1) && *ptr == '\0')
         {
             std::cout << "Diese Reihe existiert nicht!" << std::endl;
         }
@@ -121,7 +121,7 @@ int UI::getPlayerRow()
     
 }
 
-void UI::giveCostOfRow(std::shared_ptr<Playground> Field)
+void UI::giveCostOfRow(const std::shared_ptr<Playground> Field) const
 {
     std::cout << " Reihe 1: " << Field->costOfRow(0) << std::endl;
     std::cout << " Reihe 2: " << Field->costOfRow(1) << std::endl;
