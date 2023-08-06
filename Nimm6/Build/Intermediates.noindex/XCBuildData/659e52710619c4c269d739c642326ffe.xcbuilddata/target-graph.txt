@@ -1,0 +1,4 @@
+Target dependency graph (2 targets)
+gamelib in Nimm6, no dependencies
+Nimm6 in Nimm6, depends on:
+gamelib in Nimm6 (explicit)

@@ -1,0 +1,57 @@
+{
+  "buildCommand" : {
+    "command" : "build",
+    "skipDependencies" : false,
+    "style" : "buildAndRun"
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "d9fa3e4a8ef53ddfc378c5c15b23b26e4c547b0493ae2f809243b8a71ac43cb8"
+    }
+  ],
+  "containerPath" : "/Users/marijanbuffi/Desktop/Semester 2/C++/Projekt/Nimm6/Nimm6.xcodeproj",
+  "continueBuildingAfterErrors" : false,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "arm64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "macosx",
+      "sdk" : "macosx13.3",
+      "sdkVariant" : "macos",
+      "supportedArchitectures" : [
+        "arm64e",
+        "arm64",
+        "x86_64"
+      ],
+      "targetArchitecture" : "arm64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/marijanbuffi/Desktop/Semester 2/C++/Projekt/Nimm6/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/marijanbuffi/Desktop/Semester 2/C++/Projekt/Nimm6/Build/Products",
+      "derivedDataPath" : "/Users/marijanbuffi/Library/Developer/Xcode/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/marijanbuffi/Library/Developer/Xcode/DerivedData/Nimm6-artemuykzaajulfybqurbzwrxcpo/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/marijanbuffi/Library/Developer/Xcode/DerivedData/Nimm6-artemuykzaajulfybqurbzwrxcpo/Index.noindex/PrecompiledHeaders",
+      "pchPath" : "/Users/marijanbuffi/Desktop/Semester 2/C++/Projekt/Nimm6/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "CLANG_COVERAGE_MAPPING" : "YES",
+          "CLANG_PROFILE_DATA_DIRECTORY" : "/Users/marijanbuffi/Desktop/Semester 2/C++/Projekt/Nimm6/Build/Intermediates.noindex/CodeCoverage/ProfileData",
+          "ENABLE_PREVIEWS" : "NO"
+        }
+      }
+    }
+  },
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}
